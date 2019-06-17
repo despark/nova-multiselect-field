@@ -15,6 +15,7 @@
         :clear-on-select="false"
         :multiple="true"
         :max="field.max || null"
+        :allowEmpty="field.allowEmpty"
         :optionsLimit="field.optionsLimit || 1000"
       ></multiselect>
     </template>
@@ -22,10 +23,10 @@
 </template>
 
 <script>
-import { FormField, HandlesValidationErrors } from 'laravel-nova';
-import Multiselect from 'vue-multiselect';
+    import {FormField, HandlesValidationErrors} from 'laravel-nova';
+    import Multiselect from 'vue-multiselect';
 
-export default {
+    export default {
   components: { Multiselect },
 
   mixins: [FormField, HandlesValidationErrors],

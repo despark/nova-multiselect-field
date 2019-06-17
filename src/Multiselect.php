@@ -37,6 +37,16 @@ class Multiselect extends Field
     }
 
     /**
+     * @param bool $flag
+     *
+     * @return \OptimistDigital\MultiselectField\Multiselect
+     */
+    public function allowEmpty($flag)
+    {
+        return $this->withMeta(['allowEmpty' => (bool)$flag]);
+    }
+
+    /**
      * Sets the placeholder value displayed on the field.
      *
      * @param string $placeholder
