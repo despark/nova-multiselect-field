@@ -249,33 +249,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['resourceName', 'field'],
+    props: ['resourceName', 'field'],
 
-  computed: {
-    value: function value() {
-      var _this = this;
+    computed: {
+        value: function value() {
+            var _this = this;
 
-      if (!this.field.value) return '-';
+            if (!this.field.value) return '-';
 
-      var valuesArray = JSON.parse(this.field.value);
-      if (!Array.isArray(valuesArray)) return '-';
+            var valuesArray = JSON.parse(this.field.value);
+            if (!Array.isArray(valuesArray)) return '-';
 
-      var values = valuesArray.map(function (val) {
-        return _this.field.options.find(function (opt) {
-          return String(opt.value) === val;
-        });
-      }).filter(function (val) {
-        return !!val;
-      }).map(function (val) {
-        return val.label;
-      });
+            var values = valuesArray.map(function (val) {
+                return _this.field.options.find(function (opt) {
+                    return String(opt.value) === String(val);
+                });
+            }).filter(function (val) {
+                return !!val;
+            }).map(function (val) {
+                return val.label;
+            });
 
-      var joinedValues = values.join(', ');
-      if (joinedValues.length <= 40) return joinedValues;
+            var joinedValues = values.join(', ');
+            if (joinedValues.length <= 40) return joinedValues;
 
-      return values.length + ' items selected';
+            return values.length + ' items selected';
+        }
     }
-  }
 });
 
 /***/ }),
